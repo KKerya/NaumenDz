@@ -8,6 +8,8 @@ public class Main {
         //Task2
         Task2.run();
 
+        //Task3
+        Task3.run();
 
     }
 }
