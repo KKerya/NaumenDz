@@ -6,23 +6,30 @@ import java.util.Scanner;
 public class Task3 {
     public static void run(){
         System.out.println("Задание 3");
-        ArrayList<Employee> employees = new ArrayList<>();
+        Employees employees = new Employees();
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Введите название отдела: ");
+        String department = scanner.nextLine();
+        System.out.println("Средняя зарплата в отделе: " + employees.getAverageSalary(department));
+    }
+}
+
+class Employees{
+    ArrayList<Employee> employees = new ArrayList<>();
+    {
         employees.add(new Employee("Иванов Иван", 30, "ИТ", 165000.0));
         employees.add(new Employee("Самарский Александо", 45, "Маркетинг", 65000.0));
         employees.add(new Employee("Яблокова Ольга", 28, "Бухгалтерия", 40000.0));
         employees.add(new Employee("Кузнецов Иван", 35, "Бухгалтерия", 55000.0));
         employees.add(new Employee("Кузнецова Елена", 40, "ИТ", 210000.0));
+    }
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Введите название отдела: ");
-        String departament = scanner.nextLine();
-        double averageSalary = employees.stream()
+    public double getAverageSalary(String departament){
+        return employees.stream()
                 .filter(x -> x.getDepartament().equalsIgnoreCase(departament))
                 .mapToDouble(Employee :: getSalary)
                 .average()
                 .orElse(0);
-
-        System.out.println("Средняя зарплата в отделе: " + averageSalary);
     }
 }
 

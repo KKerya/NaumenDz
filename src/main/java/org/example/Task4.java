@@ -1,7 +1,6 @@
 package org.example;
 
 import org.json.JSONObject;
-
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -33,5 +32,3 @@ class SyncHttpClientExample
         }
     }
 }
-
-
