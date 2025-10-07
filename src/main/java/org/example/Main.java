@@ -1,23 +1,21 @@
 package org.example;
-
 import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws IOException, InterruptedException {
         //Task1
-        Task1.run();
+        TaskRunner.runArrayTask();
 
         //Task2
-        Task2.run();
+        TaskRunner.runSortingTask();
 
         //Task3
-        Task3.run();
+        TaskRunner.runEmployeesTask();
 
         //Task4
-        Task4.run();
+        TaskRunner.runHttpsRequestTask();
 
         //Task5
-        Task5.run();
-
+        TaskRunner.runDownloadTask();
     }
 }

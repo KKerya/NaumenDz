@@ -1,21 +1,8 @@
 package org.example;
 
-import java.util.ArrayList;
 import java.util.Random;
-import java.util.Scanner;
 
-public class Task1{
-    public static void run() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Задание 1");
-        int n = scanner.nextInt();
-        int[] array = ArrayUtils.generateArray(n);
-        ArrayUtils.printArray(array);
-        System.out.println(ArrayUtils.getMinAbs(array));
-    }
-}
-
-class ArrayUtils{
+public class ArrayUtils{
     public static int[] generateArray(int size){
         int[] array = new int[size];
         Random rnd = new Random();

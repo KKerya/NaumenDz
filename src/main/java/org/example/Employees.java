@@ -1,18 +1,6 @@
 package org.example;
 
 import java.util.ArrayList;
-import java.util.Scanner;
-
-public class Task3 {
-    public static void run(){
-        System.out.println("Задание 3");
-        Employees employees = new Employees();
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Введите название отдела: ");
-        String department = scanner.nextLine();
-        System.out.println("Средняя зарплата в отделе: " + employees.getAverageSalary(department));
-    }
-}
 
 class Employees{
     ArrayList<Employee> employees = new ArrayList<>();

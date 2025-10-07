@@ -8,14 +8,9 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 
-public class Task4 {
-    public static void run() throws  IOException, InterruptedException{
-        System.out.println("Задание 4");
-        System.out.println(SyncHttpClientExample.getHttpRequest());
-    }
-}
 
-class SyncHttpClientExample
+
+class SyncHttpClient
 {
     public static String getHttpRequest() throws IOException, InterruptedException
     {

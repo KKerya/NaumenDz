@@ -2,25 +2,7 @@ package org.example;
 
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.Scanner;
 
-public class Task2 {
-    public static void run(){
-        System.out.println("Задание 2");
-        Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
-
-        ArrayList<Double> list = ListUtils.generateList(n);
-
-        System.out.print("Исходный массив:");
-        System.out.println(list);
-
-        ListUtils.quickSort(list, 0, list.size() - 1);
-
-        System.out.print("Отсортированный массив:");
-        System.out.println(list);
-    }
-}
 
 class ListUtils{
     public static ArrayList<Double> generateList(int n){
