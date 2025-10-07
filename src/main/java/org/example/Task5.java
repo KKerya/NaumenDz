@@ -40,8 +40,8 @@ class DownloadFile implements Task{
                 FileOutputStream out = new FileOutputStream(outputFile)) {
 
                 byte[] buffer = new byte[1024];
-                int bytesRead = in.read(buffer);
 
+                int bytesRead = in.read(buffer);
                 while (bytesRead != -1) {
                     out.write(buffer, 0, bytesRead);
                     bytesRead = in.read(buffer);

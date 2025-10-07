@@ -10,13 +10,14 @@ import java.net.http.HttpResponse;
 
 public class Task4 {
     public static void run() throws  IOException, InterruptedException{
-        SyncHttpClientExample.getHttpRequest();
+        System.out.println("Задание 4");
+        System.out.println(SyncHttpClientExample.getHttpRequest());
     }
 }
 
 class SyncHttpClientExample
 {
-    public static void getHttpRequest() throws IOException, InterruptedException
+    public static String getHttpRequest() throws IOException, InterruptedException
     {
         try (HttpClient client = HttpClient.newHttpClient())
         {
@@ -27,8 +28,7 @@ class SyncHttpClientExample
                     HttpResponse.BodyHandlers.ofString());
 
             JSONObject json = new JSONObject(response.body());
-            String temp = json.getString("");
-            System.out.println("" + temp);
+            return json.getString("user-agent");
         }
     }
 }
