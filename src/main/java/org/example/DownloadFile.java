@@ -19,10 +19,17 @@ class DownloadFile implements Task{
     public void start(){
         if (!running){
             running = true;
-            File file = new File(outputFile);
+            String fileName = fileUrl.substring(fileUrl.lastIndexOf('/') + 1);
+
+            File dir = new File(outputFile);
+            if (!dir.exists()) {
+                dir.mkdirs();
+            }
+
+            File fullPath = new File(dir, fileName).getAbsoluteFile();
 
             try (BufferedInputStream in = new BufferedInputStream(new URL(fileUrl).openStream());
-                FileOutputStream out = new FileOutputStream(outputFile)) {
+                FileOutputStream out = new FileOutputStream(fullPath)) {
 
                 byte[] buffer = new byte[1024];
 
@@ -36,7 +43,7 @@ class DownloadFile implements Task{
             }
             catch (IOException e){
                 System.out.println("Ошибка при скачивании: " + e);
-                file.delete();
+                fullPath.delete();
             }
             finally {
                 running = false;
