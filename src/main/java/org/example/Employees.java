@@ -2,8 +2,9 @@ package org.example;
 
 import java.util.ArrayList;
 
-class Employees{
+class Employees {
     ArrayList<Employee> employees = new ArrayList<>();
+
     {
         employees.add(new Employee("Иванов Иван", 30, "ИТ", 165000.0));
         employees.add(new Employee("Самарский Александо", 45, "Маркетинг", 65000.0));
@@ -12,57 +13,57 @@ class Employees{
         employees.add(new Employee("Кузнецова Елена", 40, "ИТ", 210000.0));
     }
 
-    public double getAverageSalary(String departament){
+    public double getAverageSalary(String departament) {
         return employees.stream()
                 .filter(x -> x.getDepartament().equalsIgnoreCase(departament))
-                .mapToDouble(Employee :: getSalary)
+                .mapToDouble(Employee::getSalary)
                 .average()
                 .orElse(0);
     }
 }
 
-class Employee{
+class Employee {
     private String fullName;
     private int age;
     private String departament;
     private Double salary;
 
-    public Employee(String fullName, int age, String departament, Double salary){
+    public Employee(String fullName, int age, String departament, Double salary) {
         this.fullName = fullName;
         this.age = age;
         this.departament = departament;
         this.salary = salary;
     }
 
-    public String getFullName(){
+    public String getFullName() {
         return fullName;
     }
 
-    public void setFullName(String fullName){
+    public void setFullName(String fullName) {
         this.fullName = fullName;
     }
 
-    public int getAge(){
+    public int getAge() {
         return age;
     }
 
-    public void setAge(int age){
+    public void setAge(int age) {
         this.age = age;
     }
 
-    public String getDepartament(){
+    public String getDepartament() {
         return departament;
     }
 
-    public void setDepartament(String departament){
+    public void setDepartament(String departament) {
         this.departament = departament;
     }
 
-    public Double getSalary(){
+    public Double getSalary() {
         return salary;
     }
 
-    public void setSalary(Double salary){
+    public void setSalary(Double salary) {
         this.salary = salary;
     }
 

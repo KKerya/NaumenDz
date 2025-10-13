@@ -4,18 +4,18 @@ import java.util.ArrayList;
 import java.util.Random;
 
 
-class ListUtils{
-    public static ArrayList<Double> generateList(int n){
+class ListUtils {
+    public static ArrayList<Double> generateList(int n) {
         ArrayList<Double> list = new ArrayList<>(n);
         Random rnd = new Random();
-        for (int i = 0; i < n; i++){
+        for (int i = 0; i < n; i++) {
             list.add(rnd.nextDouble());
         }
         return list;
     }
 
-    public static void quickSort(ArrayList<Double> list, int left, int right){
-        if (left < right){
+    public static void quickSort(ArrayList<Double> list, int left, int right) {
+        if (left < right) {
             int pivot = partition(list, left, right);
 
             quickSort(list, left, pivot - 1);
@@ -23,12 +23,12 @@ class ListUtils{
         }
     }
 
-    private static int partition(ArrayList<Double> list, int left, int right){
+    private static int partition(ArrayList<Double> list, int left, int right) {
         double pivot = list.get(right);
         int i = left - 1;
 
-        for (int j = left; j < right; j++){
-            if (list.get(j) <= pivot){
+        for (int j = left; j < right; j++) {
+            if (list.get(j) <= pivot) {
                 i++;
                 double temp = list.get(i);
                 list.set(i, list.get(j));
@@ -36,9 +36,9 @@ class ListUtils{
             }
         }
 
-        double temp = list.get(i+1);
-        list.set(i+1, pivot);
-        list.set(right,temp);
+        double temp = list.get(i + 1);
+        list.set(i + 1, pivot);
+        list.set(right, temp);
 
         return i + 1;
     }

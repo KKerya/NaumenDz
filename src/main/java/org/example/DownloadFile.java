@@ -4,8 +4,7 @@ import java.io.*;
 import java.net.URL;
 
 
-
-class DownloadFile implements Task{
+class DownloadFile implements Task {
     private final String fileUrl;
     private final String outputFile;
 
@@ -13,13 +12,13 @@ class DownloadFile implements Task{
     private volatile boolean running = false;
     private volatile boolean stoppedByUser = false;
 
-    public DownloadFile(String fileUrl, String outputFile){
+    public DownloadFile(String fileUrl, String outputFile) {
         this.fileUrl = fileUrl;
         this.outputFile = outputFile;
     }
 
     @Override
-    public void start(){
+    public void start() {
         if (running) {
             System.out.println("Скачивание уже запущено");
             return;
@@ -53,10 +52,9 @@ class DownloadFile implements Task{
                     out.write(buffer, 0, bytesRead);
                 }
 
-                if(running && !stoppedByUser) {
+                if (running && !stoppedByUser) {
                     System.out.println("Успешно завершено");
-                }
-                else{
+                } else {
                     System.out.println("Скачивание остановлено");
                     fullPath.delete();
                 }
@@ -73,7 +71,7 @@ class DownloadFile implements Task{
     }
 
     @Override
-    public void stop(){
+    public void stop() {
         running = false;
         stoppedByUser = true;
         if (thread != null) {

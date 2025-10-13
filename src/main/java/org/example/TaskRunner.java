@@ -26,7 +26,7 @@ public class TaskRunner {
      * Пользователь вводит количество элементов, список заполняется случайными числами
      * Выполняется быстрая сортировка и результат выводится на консоль
      */
-    public static void runSortingTask(){
+    public static void runSortingTask() {
         System.out.println("Задание 2");
         int n = scanner.nextInt();
         scanner.nextLine();
@@ -49,7 +49,7 @@ public class TaskRunner {
      * Создается класс Employees содержащий внутри список с объектами типа Employee
      * Пользователь вводит название отдела и выводится средняя заработная плата в этом отделе
      */
-    public static void runEmployeesTask(){
+    public static void runEmployeesTask() {
         System.out.println("Задание 3");
         Employees employees = new Employees();
         System.out.print("Введите название отдела: ");
@@ -61,10 +61,11 @@ public class TaskRunner {
      * Запускает задание 4
      * Выполнение Http запроса
      * Выполняется GET запрос на сервер и выводится user-agent
+     *
      * @throws IOException
      * @throws InterruptedException
      */
-    public static void runHttpsRequestTask() throws IOException, InterruptedException{
+    public static void runHttpsRequestTask() throws IOException, InterruptedException {
         System.out.println("Задание 4");
         System.out.println(SyncHttpClient.requestUserAgent());
     }
