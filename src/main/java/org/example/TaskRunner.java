@@ -66,7 +66,7 @@ public class TaskRunner {
      */
     public static void runHttpsRequestTask() throws IOException, InterruptedException{
         System.out.println("Задание 4");
-        System.out.println(SyncHttpClient.getHttpRequest());
+        System.out.println(SyncHttpClient.requestUserAgent());
     }
 
     /**
@@ -82,6 +82,10 @@ public class TaskRunner {
         DownloadFile downloadFile = new DownloadFile(url, output);
         downloadFile.start();
 
+        System.out.println("Скачивание начато. Нажмите Enter для остановки");
+        scanner.nextLine();
+
         downloadFile.stop();
+        System.out.println("Скачивание остановлено");
     }
 }

@@ -12,7 +12,7 @@ import java.net.http.HttpResponse;
 
 class SyncHttpClient
 {
-    public static String getHttpRequest() throws IOException, InterruptedException
+    public static String requestUserAgent() throws IOException, InterruptedException
     {
         try (HttpClient client = HttpClient.newHttpClient())
         {

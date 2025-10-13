@@ -9,9 +9,8 @@ class ListUtils{
         ArrayList<Double> list = new ArrayList<>(n);
         Random rnd = new Random();
         for (int i = 0; i < n; i++){
-            list.add(rnd.nextDouble(-10000, 10000));
+            list.add(rnd.nextDouble());
         }
-
         return list;
     }
 

@@ -7,7 +7,7 @@ public class ArrayUtils{
         int[] array = new int[size];
         Random rnd = new Random();
         for(int i = 0; i < size; i++){
-            array[i] = rnd.nextInt(-10000,10000);
+            array[i] = rnd.nextInt();
         }
         return array;
     }
@@ -17,6 +17,9 @@ public class ArrayUtils{
         for(int i = 1; i < array.length; i++){
             if (Math.abs(array[i]) < Math.abs(minAbs)){
                 minAbs = array[i];
+
+                if (minAbs == 0)
+                    break;
             }
         }
         return minAbs;
@@ -33,5 +36,4 @@ public class ArrayUtils{
         }
         System.out.println();
     }
-
 }
